@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Amit General Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stle.css">
+
+<style>
+body{
+font-family: Arial;
+margin:0;
+background:#08959a;
+}
+
+header{
+background:rgb(244, 214, 22);
+color:rgb(17, 17, 13);
+padding:25px;
+text-align:center;
+}
+
+nav{
+background:#333;
+text-align:center;
+padding:12px;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-size:18px;
+}
+
+.banner{
+background:url(image\ copy.png) center/cover;
+height:300px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:rgb(216, 243, 5);
+font-size:35px;
+font-weight:bold;
+}
+
+section{
+padding:30px;
+text-align:center;
+}
+
+.products{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.product{
+background:rgb(255, 255, 255);
+width:220px;
+border-radius:8px;
+box-shadow:0 0 8px gray;
+padding:15px;
+}
+
+.product img{
+width:100%;
+border-radius:5px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+        <img src="C:\Users\PT\Downloads\images (5).jpg" alt="Flower Left" class="flower-left">
+
+<img src="C:\Users\PT\Downloads\images (5).jpg" alt="Flower Right" class="flower-right">
+
+<img src="C:\Users\PT\Downloads\12-1-rf-lg-ro-d1-momento-original-imah6gpbfebdky5e.webp" alt="Store Logo" class="god-img">
+
+<h1>Amit General Store </h1>
+<p>Daily Market Burla, Sambalpur</p>
+
+<div class="cart-icon">
+🛒 Cart (<span id="cartCount">0</span>)
+</div>
+
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#products">Products</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="banner">
+Fresh Groceries at Best Price
+</div>
+
+<div class="search-box">
+<input type="text" id="searchBar" placeholder="Search grocery items..." onkeyup="searchProduct()">
+<button class="search-icon" onclick="searchProduct()">🔍</button>
+</div>
+
+<button onclick="showProductInfo('rice')">Rice</button>
+<button onclick="showProductInfo('oil')">Oil</button>
+<button onclick="showProductInfo('spices')">Spices</button>
+<button onclick="showProductInfo('sugar')">Sugar</button>
+<button onclick="showProductInfo('salt')">Salt</button>
+<button onclick="showProductInfo('tea')">Tea</button>
+<button onclick="showProductInfo('maggi')">Maggi</button>
+<button onclick="showProductInfo('soap')">Soap</button>
+
+<h3 id="productTitle"></h3>
+<p id="productDetails"></p>
+<p id="productPrice"></p>
+
+
+<section id="products">
+<h2>Our Products</h2>
+
+<div class="products">
+
+
+<div class="product">
+<img src="image.png">
+<h3>Rice</h3>
+<p>₹60 / kg</p>
+<button onclick="addToCart('Rice',60)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Rice',60)">Buy Now</button>
+</div>
+
+<div class="product">
+<img src="C:\Users\PT\OneDrive\Desktop\Edible-oil.jpg">
+<h3>Edible Oil</h3>
+<p>₹150 / litre</p>
+<button onclick="addToCart('Oil',150)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Oil',150)">Buy Now</button>
+
+</div>
+
+
+<div class="product">
+<img src="C:\Users\PT\Downloads\SKU-0270_0-1726396605516 (1).webp">
+<h3>Atta (Wheat Flour)</h3>
+<p>₹45 / kg</p>
+<button onclick="addToCart('Atta',45)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Atta',45)">Buy Now</button>
+</div>
+
+<div class="product">
+<img src="C:\Users\PT\Downloads\244096_6-madhur-sugar-refined.webp">
+<h3>Sugar</h3>
+<p>₹55 / kg</p>
+<button onclick="addToCart('Sugar',55)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Sugar',55)">Buy Now</button>
+</div>
+
+
+<div class="product">
+<img src="C:\Users\PT\Downloads\241600_9-tata-salt-iodized.webp">
+<h3>Salt</h3>
+<p>₹30 / pack</p>
+<button onclick="addToCart('Salt',30)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Salt',30)">Buy Now</button>
+</div>
+
+<div class="product">
+<img src="C:\Users\PT\Downloads\61z40Qqq-eL._SL1000_.jpg">
+<h3>Tea</h3>
+<p>₹100 / pack</p>
+<button onclick="addToCart('Tea',100)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Tea',100)">Buy Now</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1590080874088-eec64895b423">
+<h3>Biscuit</h3>
+<p>₹10 / packet</p>
+<button onclick="addToCart('Biscuit',10)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Biscuit',10)">Buy Now</button>
+</div>
+
+<div class="product">
+<img src="C:\Users\PT\Downloads\10-500x500.webp">
+<h3>Maggi Noodles</h3>
+<p>₹10 / pack</p>
+<button onclick="addToCart('Maggi',10)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Maggi',10)">Buy Now</button>
+</div>
+
+
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d">
+<h3>Spices</h3>
+<p>₹50 / pack</p>
+<button onclick="addToCart('Spices',50)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Spices',50)">Buy Now</button>
+</div>
+
+<div class="product">
+<img src="C:\Users\PT\Downloads\Best-Detergent-Powder-in-India.jpg">
+<h3>Surf Detergent</h3>
+<p>₹120 / pack</p>
+<button onclick="addToCart('Surf',120)">Add to Cart</button>    
+<button class="buy-btn" onclick="buyNow('Surf',120)">Buy Now</button>
+</div>
+
+<div class="product">
+<img src="C:\Users\PT\Downloads\product-jpeg-1000x1000.webp">
+<h3>Soap</h3>
+<p>₹10 / piece</p>
+<button onclick="addToCart('Soap',10)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Soap',10)">Buy Now</button>
+</div>
+
+
+<div class="product">
+    <img src="C:\Users\PT\Downloads\images.jpg" alt="">
+<h3>Toothpaste</h3>
+<p>₹20</p>
+<button onclick="addToCart('Toothpaste',20)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Toothpaste',20)">Buy Now</button>
+</div>
+<div class="product">
+<h3>Rahar Dal (Toor Dal)</h3>
+<p>₹120 / kg</p>
+<button onclick="addToCart('Rahar Dal',120)">Add to Cart</button> 
+ <button class="buy-btn" onclick="buyNow('Rahar Dal',120)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Chana Dal</h3>
+<p>₹80 / kg</p>
+<button onclick="addToCart('Chana Dal',80)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Chana Dal',80)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Biri Dal (Urad Dal)</h3>
+<p>₹120 / kg</p>
+<button onclick="addToCart('Biri Dal',120)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Biri Dal',120)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Moong Dal</h3>
+<p>₹110 / kg</p>
+<button onclick="addToCart('Moong Dal',110)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Moong Dal',110)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Lal Chana</h3>
+<p>₹110 / kg</p>
+<button onclick="addToCart('Lal Chana',110)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Lal Chana',110)">Buy Now</button>
+</div>
+<div class="product">
+<h3>Besan (Gram Flour)</h3>
+<p>₹90 / kg</p>
+<button onclick="addToCart('Besan',90)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Besan',90)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Maida</h3>
+<p>₹40 / kg</p>
+<button onclick="addToCart('Maida',40)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Maida',40)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Corn Flour</h3>
+<p>₹70 / pack</p>
+<button onclick="addToCart('Corn Flour',70)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Corn Flour',70)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Baking Soda</h3>
+<p>₹10 / pack</p>
+<button onclick="addToCart('Baking Soda',10)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Baking Soda',10)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Masoor Dal</h3>
+<p>₹80 / kg</p>
+<button onclick="addToCart('Masoor Dal',80)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Masoor Dal',80)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Mustard Oil</h3>
+<p>₹180 / litre</p>
+<button onclick="addToCart('Mustard Oil',180)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Mustard Oil',180)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Refined Oil</h3>
+<p>₹150 / litre</p>
+<button onclick="addToCart('Refined Oil',150)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Refined Oil',150)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Groundnut Oil</h3>
+<p>₹180 / litre</p>
+<button onclick="addToCart('Groundnut Oil',180)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Groundnut Oil',180)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Poha</h3>
+<p>₹55/ kg</p>
+<button onclick="addToCart('Poha',55)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Poha',55)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Sooji (Semolina)</h3>
+<p>₹60 / kg</p>
+<button onclick="addToCart('Sooji',60)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Sooji',60)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Sabudana</h3>
+<p>₹120/ kg</p>
+<button onclick="addToCart('Sabudana',120)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Sabudana',120)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Black Pepper</h3>
+<p>₹90 / pack</p>
+<button onclick="addToCart('Black Pepper',90)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Black Pepper',90)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Cumin Seeds (Jeera)</h3>
+<p>₹65 / pack</p>
+<button onclick="addToCart('Jeera',65)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Jeera',65)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Coriander Powder</h3>
+<p>₹30 / pack</p>
+<button onclick="addToCart('Coriander Powder',30)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Coriander Powder',30)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Garam Masala</h3>
+<p>₹90/ pack</p>
+<button onclick="addToCart('Garam Masala',90)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Garam Masala',90)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Fair & Lovely Cream</h3>
+<p>₹150</p>
+<button onclick="addToCart('Fair & Lovely Cream',150)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Fair & Lovely Cream',150)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Vicco Turmeric Cream</h3>
+<p>₹120</p>
+<button onclick="addToCart('Vicco Turmeric Cream',120)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Vicco Turmeric Cream',120)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Ponds Powder</h3>
+<p>₹90</p>
+    <button onclick="addToCart('Ponds Powder',90)">Add to Cart</button>
+    <button class="buy-btn" onclick="buyNow('Ponds Powder',90)">Buy Now</button>
+    </div>
+
+<div class="item">
+<h3>Nivea Cream</h3>
+<p>₹180</p>
+<button onclick="addToCart('Nivea Cream',180)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Nivea Cream',180)">Buy Now</button>
+</div>
+
+
+<div class="item">
+<h3>Boroline Cream</h3>
+<p>₹45</p>
+<button onclick="addToCart('Boroline Cream',45)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Boroline Cream',45)">Buy Now</button>
+</div>
+
+<div class="item">
+<h3>Lux Soap</h3>
+<p>₹40</p>
+<button onclick="addToCart('Lux Soap',40)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Lux Soap',40)">Buy Now</button>
+</div>
+
+<div class="item">
+<h3>Dove Shampoo</h3>
+<p>₹180</p>
+<button onclick="addToCart('Dove Shampoo',180)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Dove Shampoo',180)">Buy Now</button>
+</div>
+
+<div class="item">
+<h3>Tilsona</h3>
+<p>₹100</p>
+<button onclick="addToCart('Tilsona',100)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Tilsona',100)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Rice Powder</h3>
+<p>₹50 / kg</p>
+<button onclick="addToCart('Rice Powder',50)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Rice Powder',50)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Raggold Tin 15kg</h3>
+<p>₹2500</p>
+<button onclick="addToCart('Raggold Tin 15kg',2500)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Raggold Tin 15kg',2500)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Samlei Bhog Rice 26kg</h3>
+<p>₹950</p>
+<button onclick="addToCart('Samlei Bhog Rice 26kg',950)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Samlei Bhog Rice 26kg',950)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Krish Bhog Rice 26kg</h3>
+<p>₹950</p>
+<button onclick="addToCart('Krish Bhog Rice 26kg',950)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Krish Bhog Rice 26kg',950)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Ojaswa Rice 30kg</h3>
+<p>₹1600</p>
+<button onclick="addToCart('Ojaswa Rice 30kg',1600)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Ojaswa Rice 30kg',1600)">Buy Now</button>
+</div>
+
+<div class="product">
+<h3>Tandoori Atta</h3>
+<p>₹40/-kg</p>
+<button onclick="addToCart('Tandoori Atta',40)">Add to Cart</button>
+<button class="buy-btn" onclick="buyNow('Tandoori Atta',40)">Buy Now</button>
+</div>
+
+
+
+
+</div>
+</section>
+
+<section id="cart">
+<h2>Your Cart</h2>
+<div id="cartItems"></div>
+<p id="totalPrice"></p>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<p><b>Amit General Store</b></p>
+<p>Daily Market Burla, Sambalpur</p>
+<p>Pin: 768017</p>
+<p>Phone: 9861216284</p>
+
+
+<h3>Location</h3>
+
+<iframe 
+src="https://maps.google.com/maps?q=Burla%20Sambalpur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="300">
+</iframe>
+
+</section>
+
+<a class="whatsapp" href="https://wa.me/919861216284">
+Order on WhatsApp
+</a>
+
+<footer>
+<p>© 2026 Amit General Store | All Rights Reserved</p>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
