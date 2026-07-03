@@ -1,6 +1,6 @@
 """
-Created on 2021-08-14 || Version 0.0.1
-@author: Mahendra Prasad Gupta
+Created on 2026-07-03 || Version 0.0.1
+@author: Sujit Prasad
 
 Project: Snakes and ladders  (SLGAME)
 
